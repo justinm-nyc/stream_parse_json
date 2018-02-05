@@ -1,5 +1,4 @@
 import ijson
-import json
 
 
 def initialize_parser(file):
@@ -117,10 +116,8 @@ def extract_by_key(parser, key_value):
 
     '''
     ret = []
-    
-    json_string = str(build_from_events(parser))
-    json_string = json_string.replace("'","\"")
-    parsed_json = json.loads(json_string)
+
+    parsed_json = build_from_events(parser)
     #print(parsed_json.get('earth').get('america')[0].get("info").get('2'))
     
     #for level in range(max_nesting(parser)):
